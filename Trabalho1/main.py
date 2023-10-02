@@ -1,7 +1,13 @@
+'''
+Autor: Felipe Fontenele dos Santos
+Matrícula: 190027622
+Disciplina: Segurança Computacional
+Turma: 02
+'''
+
 from VigenereCipher import VigenereCipher
 from CipherAttack import CipherAttack
 import os
-
 
 def readFile(filePath):
     message = ''
