@@ -3,16 +3,16 @@ from CipherAttack import CipherAttack
 import os
 
 
-def readFile(filename):
-    lines = []
-    with open(filename) as f:
-        lines = f.readlines()
+def readFile(filePath):
+    message = ''
+    if not os.path.exists(filePath):
+        print(f'Arquivo {filePath} não foi localizado.')
+        return
 
-    output = ''
-    for s in lines:
-        output += s
+    with open(filePath, encoding='utf-8') as file:
+        message = file.read()
 
-    return output
+    return message
 
 
 def main():
@@ -44,13 +44,9 @@ def main():
 
             if input() == 's':
                 filePath = input('Digite o nome do arquivo: ')
+                message = readFile(filePath)
+                if message == '': continue
 
-                if not os.path.exists(filePath):
-                    print(f'Arquivo {filePath} não foi localizado.')
-                    continue
-
-                with open(filePath, encoding='utf-8') as file:
-                    message = file.read()
             else:
                 print('Digite a mensagem cifrada a ser quebrada: ')
                 message = input()
