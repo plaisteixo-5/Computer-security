@@ -17,7 +17,7 @@ class CipherAttack:
         vigenere_cipher = VigenereCipher()
         aux_cipher = cipher
 
-        cipher = self._format_cipher(cipher)
+        cipher = self._format_message(cipher)
         key_size = self.get_key_size(cipher)
         key = self.discover_key(cipher, key_size, language)
 
